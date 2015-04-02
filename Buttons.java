@@ -34,7 +34,7 @@ public class Buttons extends Application{
         button1.setLayoutY(10- button1.getLayoutBounds().getMinY());
 	}
 	
-	//NOTE: Figure out what the fuck went wrong
+	
 	public void makeButton2(){
 		Image imageDecline = new Image(getClass().getResourceAsStream("check.png"));
 		button2 = new Button();
@@ -69,8 +69,10 @@ public class Buttons extends Application{
 		button4.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
+            	String hex = Integer.toHexString((int)(Math.random()*16777216));
             	button4.setStyle("-fx-base: #" + 
-            Integer.toHexString((int)(Math.random()*16777216)) + ";");
+            	("000000" + hex).substring(hex.length())
+            	+ ";");
             }
         });
 		button4.setPrefSize(150,50);
