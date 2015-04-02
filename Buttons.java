@@ -36,11 +36,12 @@ public class Buttons extends Application{
 	
 	//NOTE: Figure out what the fuck went wrong
 	public void makeButton2(){
-		Image imageDecline = new Image(getClass().getResourceAsStream("not.png"));
+		Image imageDecline = new Image(getClass().getResourceAsStream("check.png"));
 		button2 = new Button();
 		button2.setGraphic(new ImageView(imageDecline));
-		button2.setLayoutX(200 - button1.getLayoutBounds().getMinX());
-        button2.setLayoutY(210- button1.getLayoutBounds().getMinY());
+		button2.setPrefSize(150,50);
+		button2.setLayoutX(350 - button1.getLayoutBounds().getMinX());
+        button2.setLayoutY(10- button1.getLayoutBounds().getMinY());
 	}
 	
 	public void makeButton3(){
@@ -92,7 +93,7 @@ public class Buttons extends Application{
 	
 	public void makeObjects(){
 		makeButton1();
-		//makeButton2();
+		makeButton2();
 		makeButton3();
 		makeButton4();
 		makeRadioButtons();
@@ -106,7 +107,7 @@ public class Buttons extends Application{
 		makeObjects();
 		
 		root.getChildren().add(button1);
-		//root.getChildren().add(button2);
+		root.getChildren().add(button2);
 		root.getChildren().add(button3);
 		root.getChildren().add(button4);
 		for (int i = 0; i<buttons.length ; i++)
